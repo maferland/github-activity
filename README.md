@@ -6,6 +6,8 @@
 
 ---
 
+[![NPM](https://img.shields.io/npm/v/github-activity.svg)](https://www.npmjs.com/package/github-activity) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -18,8 +20,6 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 >
-
-[![NPM](https://img.shields.io/npm/v/github-activity.svg)](https://www.npmjs.com/package/github-activity) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Installation
 
