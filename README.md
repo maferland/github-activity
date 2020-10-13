@@ -1,37 +1,24 @@
-<div align="center">
-<h1>📊 Github Activity</h1>
+# github-activity
 
-<p>React component displaying Github activity</p>
-</div>
+> Component displaying github activities
 
----
+[![NPM](https://img.shields.io/npm/v/github-activity.svg)](https://www.npmjs.com/package/github-activity) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Table of Contents
+## Install
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [LICENSE](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## Installation
-
-```
-npm install --save @maferland/hooks
-// or
-yarn add @maferland/hooks
+```bash
+npm install --save github-activity
 ```
 
 ## Usage
 
-```js
+```tsx
+import React from 'react'
+import { UserActivityFeed } from '@maferland/github-activity'
+
 // TODO
 ```
 
-## LICENSE
+## License
 
-[MIT](LICENSE)
+MIT © [maferland](https://github.com/maferland)

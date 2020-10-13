@@ -1,23 +1,44 @@
 {
-  "name": "example",
-  "version": "0.1.0",
-  "description": "Example for github-activity",
-  "main": "index.html",
+  "name": "github-activity-example",
+  "homepage": ".",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "parcel index.html",
-    "dev": "parcel watch index.html"
+    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
+    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
+    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
   },
-  "author": "Marc-Antoine Ferland <maferland@hey.com>",
-  "license": "MIT",
   "dependencies": {
-    "@maferland/github-activity": "file:../dist",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@testing-library/jest-dom": "link:../node_modules/@testing-library/jest-dom",
+    "@testing-library/react": "link:../node_modules/@testing-library/react",
+    "@testing-library/user-event": "link:../node_modules/@testing-library/user-event",
+    "@types/jest": "link:../node_modules/@types/jest",
+    "@types/node": "link:../node_modules/@types/node",
+    "@types/react": "link:../node_modules/@types/react",
+    "@types/react-dom": "link:../node_modules/@types/react-dom",
+    "react": "link:../node_modules/react",
+    "react-dom": "link:../node_modules/react-dom",
+    "react-scripts": "link:../node_modules/react-scripts",
+    "typescript": "link:../node_modules/typescript",
+    "@maferland/github-activity": "0.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "parcel-bundler": "^1.12.4"
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

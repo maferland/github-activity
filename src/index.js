@@ -1,1 +1,1 @@
-export {default as GithubUserActivity} from './github-user-activity'
+export { default as UserActivityFeed } from './user-acitivity-feed'
