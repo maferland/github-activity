@@ -6,7 +6,7 @@
 
 ---
 
-[![NPM](https://img.shields.io/npm/v/github-activity.svg)](https://www.npmjs.com/package/github-activity) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@maferland/github-activity.svg)](https://www.npmjs.com/package/@maferland/github-activity) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Table of Contents
 
