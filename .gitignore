@@ -2,3 +2,4 @@ dist
 
 # npm
 node_modules
+example/.cache/

@@ -8,7 +8,9 @@
   "unpkg": "dist/github-activity.umd.js",
   "scripts": {
     "build": "microbundle",
-    "dev": "microbundle watch",
+    "dev": "concurrently \"yarn:dev:*\"",
+    "dev:build": "microbundle watch",
+    "dev:examples": "cd ./example && yarn start",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
     "fix": "eslint --fix --ext .js --ignore-path .gitignore ."
   },
