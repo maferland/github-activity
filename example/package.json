@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "version": "0.1.0",
+  "description": "Example for github-activity",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "dev": "parcel watch index.html"
+  },
+  "author": "Marc-Antoine Ferland <maferland@hey.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@maferland/github-activity": "file:../dist",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "parcel-bundler": "^1.12.4"
+  }
+}
