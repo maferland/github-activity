@@ -92,6 +92,7 @@
     "yarn": "1.22.10"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.35",
     "@types/isomorphic-fetch": "^0.0.35",
     "isomorphic-fetch": "^3.0.0",
     "react-query": "^2.23.1"
