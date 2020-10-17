@@ -52,16 +52,21 @@ const emojis = {
   DeleteEvent: '🔥',
   PushEvent: '📌',
   ForkEvent: '🍴',
+  PullRequestReviewEvent: '🧐',
+  PullRequestReviewCommentEvent: '🖊️',
   default: '🙈'
 }
 
 const details = {
   PullRequestEvent: ' opened a pull request on ',
   WatchEvent: ' started watching ',
-  CreateEvent: ' created something on ',
-  DeleteEvent: ' deleted something on ',
-  PushEvent: ' pushed something to ',
+  CreateEventBranch: ' created a branch on ',
+  DeleteEventTag: ' deleted a tag on ',
+  PushEventBranch: ' pushed a branch to ',
+  PushEventTag: ' pushed a tag to ',
   ForkEvent: ' forked ',
+  PullRequestReviewEvent: ' is reviewing ',
+  PullRequestReviewCommentEvent: ' is reviewing ',
   default: ' oops, this event is not implemented '
 }
 
