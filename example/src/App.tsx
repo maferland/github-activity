@@ -6,9 +6,9 @@ const App = () => {
   return (
     <>
       <form onSubmit={(event) => event.preventDefault()}>
-        <label htmlFor='username'></label>
+        <label htmlFor='github-user'></label>
         <input
-          id='username'
+          id='github-user'
           value={username}
           onChange={(event) => setUsername(event.target.value)}
         ></input>
