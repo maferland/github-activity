@@ -98,7 +98,7 @@ const UserActivity = (props: Props) => {
           </a>
           {detail}
         </span>
-        <a href={repo.url}>{repo.name}</a>
+        <a href={`https://github.com/${repo.name}`}>{repo.name}</a>
       </div>
     </div>
   )
