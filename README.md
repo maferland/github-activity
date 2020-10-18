@@ -40,4 +40,4 @@ import { UserActivityFeed } from '@maferland/github-activity'
 
 ## License
 
-MIT © [maferland](https://github.com/maferland)
+[MIT](LICENSE) © [maferland](https://github.com/maferland)
