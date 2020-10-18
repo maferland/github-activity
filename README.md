@@ -61,7 +61,3 @@ ReactDOM.render(<App />, document.getElementById('root'))
 ## License
 
 [MIT](LICENSE) © [maferland](https://github.com/maferland)
-
-```
-
-```
