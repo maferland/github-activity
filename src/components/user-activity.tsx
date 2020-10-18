@@ -11,6 +11,7 @@ const activityStyle = css`
   --white: #fff;
   --black: #303030;
   --grey: #999;
+  --lightGrey: gainsboro;
   --linear-transition: 0.2s linear;
   --font-size: 1.1em;
 
@@ -18,13 +19,15 @@ const activityStyle = css`
   position: relative;
   color: var(--black);
   font-size: var(--font-size);
+  min-height: 75px;
+  max-height: 75px;
 
   display: flex;
   align-items: center;
 
   border: 2px solid var(--black);
   border-radius: 1em;
-  padding: 1em 2em;
+  padding: 0.75em;
 
   transition: box-shadow var(--linear-transition),
     transform var(--linear-transition);
@@ -45,15 +48,44 @@ const activityStyle = css`
   }
 `
 
+const text = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 1.25em;
+`
+
+const image = css`
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  box-shadow: 1px 1px 3px var(--grey);
+  background-color: var(--lightGrey);
+`
+
+const icon = css`
+  padding: 0.1em;
+  font-size: 1.5em;
+`
+
+const placeholder = css`
+  width: 300px;
+  box-shadow: 1px 1px 3px var(--grey);
+  background: var(--lightGrey);
+`
+
 const emojis = {
   PullRequestEvent: '🔨',
   WatchEvent: '👀',
   CreateEvent: '🐤',
   DeleteEvent: '🔥',
+  PushEventBranch: '📌',
+  PushEventTag: '📌',
   PushEvent: '📌',
   ForkEvent: '🍴',
   PullRequestReviewEvent: '🧐',
-  PullRequestReviewCommentEvent: '🖊️',
+  PullRequestReviewCommentEvent: '🔬',
   default: '🙈'
 }
 
@@ -64,6 +96,7 @@ const details = {
   DeleteEventTag: ' deleted a tag on ',
   PushEventBranch: ' pushed a branch to ',
   PushEventTag: ' pushed a tag to ',
+  PushEvent: ' pused something to',
   ForkEvent: ' forked ',
   PullRequestReviewEvent: ' is reviewing ',
   PullRequestReviewCommentEvent: ' is reviewing ',
@@ -81,27 +114,53 @@ const UserActivity = (props: Props) => {
   return (
     <div css={activityStyle}>
       <img
-        css={{ borderRadius: '50%', height: '60px', border: '2px solid black' }}
+        css={image}
         src={actor.avatar_url}
         alt={`${actor.display_login}'s avatar`}
       />
-      <div
-        css={css`
-          text-align: center;
-          width: 100%;
-        `}
-      >
-        <span css={{ padding: '0.5em', fontSize: '2em' }}>{typeIcon}</span>
+      <div css={text}>
         <span>
           <a href={`https://github.com/${actor.display_login}`}>
             {actor.display_login}
           </a>
           {detail}
+          <a href={`https://github.com/${repo.name}`}>{repo.name}</a>
         </span>
-        <a href={`https://github.com/${repo.name}`}>{repo.name}</a>
+
+        <span css={icon}>{typeIcon}</span>
       </div>
     </div>
   )
 }
 
-export { UserActivity }
+const LoadingUserActivity = () => {
+  return (
+    <div css={activityStyle}>
+      <div css={image} />
+      <div css={text}>
+        <div css={placeholder}>&nbsp;</div>
+        <span css={{ icon, opacity: 0.75 }}>⌛</span>
+      </div>
+    </div>
+  )
+}
+
+interface UserErrorActivityProps {
+  message: string
+}
+
+const ErrorUserActivity = (props?: UserErrorActivityProps) => {
+  return (
+    <div css={activityStyle}>
+      <div css={image} />
+      <div css={text}>
+        <div>{props?.message}</div>
+        <span css={{ icon, opacity: 0.75 }}>🙁</span>
+      </div>
+    </div>
+  )
+}
+
+ErrorUserActivity.defaultProps = { message: 'Something went wrong' }
+
+export { UserActivity, LoadingUserActivity, ErrorUserActivity }
