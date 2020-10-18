@@ -2,7 +2,6 @@
 import { css, jsx } from '@emotion/core'
 
 const feed = css`
-  padding: 1em;
   width: 100%;
   & > * {
     margin-bottom: 1em;
