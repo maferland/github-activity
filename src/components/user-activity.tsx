@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { capitalize } from '../util/capitalize'
 import { Activity } from './activity'
 
 interface Props {
@@ -80,8 +81,6 @@ const emojis = {
   WatchEvent: '👀',
   CreateEvent: '🐤',
   DeleteEvent: '🔥',
-  PushEventBranch: '📌',
-  PushEventTag: '📌',
   PushEvent: '📌',
   ForkEvent: '🍴',
   PullRequestReviewEvent: '🧐',
@@ -93,10 +92,12 @@ const details = {
   PullRequestEvent: ' opened a pull request on ',
   WatchEvent: ' started watching ',
   CreateEventBranch: ' created a branch on ',
+  CreateEventTag: ' created a tag on ',
+  DeleteEventBranch: ' deleted a branch on ',
   DeleteEventTag: ' deleted a tag on ',
   PushEventBranch: ' pushed a branch to ',
   PushEventTag: ' pushed a tag to ',
-  PushEvent: ' pused something to',
+  PushEvent: ' pushed something to ',
   ForkEvent: ' forked ',
   PullRequestReviewEvent: ' is reviewing ',
   PullRequestReviewCommentEvent: ' is reviewing ',
@@ -105,11 +106,21 @@ const details = {
 
 const UserActivity = (props: Props) => {
   const {
-    activity: { type, actor, repo }
+    activity: {
+      type,
+      actor,
+      repo,
+      // eslint-disable-next-line
+      payload: { ref_type: refType }
+    }
   } = props
 
   const typeIcon = emojis[type] || emojis.default
-  const detail = details[type] || details.default
+
+  let detail = details[type]
+  if (!detail && refType) {
+    detail = details[type + capitalize(refType)] || details.default
+  }
 
   return (
     <div css={activityStyle}>
